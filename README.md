@@ -48,3 +48,5 @@ export default tseslint.config({
   },
 })
 ```
+# Tailwind
+Tailwind was added using the official [guide](https://tailwindcss.com/docs/guides/vite)

@@ -1,9 +1,11 @@
 import "./App.css";
+import Keyboard from "./Keyboard";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <textarea rows={1} cols={80}></textarea>
+      <Keyboard />
     </>
   );
 }

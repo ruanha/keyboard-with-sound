@@ -6,15 +6,12 @@ function Keyboard() {
     ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Æ", "Ø"],
     ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "-"],
   ];
-  const audio = new Audio("/t-rex-roar.mp3");
   return (
     <div className="flex-col space-y-2">
       {keyboard.map((row, i) => (
         <div key={i} className="flex space-x-2">
           {row.map((key) => (
-            <Key key={key} audio={audio}>
-              {key}
-            </Key>
+            <Key key={key}>{key}</Key>
           ))}
         </div>
       ))}

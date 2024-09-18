@@ -1,13 +1,9 @@
 import { useState } from "react";
+import { useGetAudio } from "./useGetAudio";
 
-function Key({
-  children,
-  audio,
-}: {
-  children: string;
-  audio: HTMLAudioElement;
-}) {
+function Key({ children }: { children: string }) {
   const [active, setActive] = useState(false);
+  const audio = useGetAudio(children);
   document.addEventListener("keydown", (event) => {
     if (event.key === children.toLocaleLowerCase()) {
       console.log(children);

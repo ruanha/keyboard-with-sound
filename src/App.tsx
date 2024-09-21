@@ -8,10 +8,10 @@ function App() {
     textarea.current?.focus();
   });
   return (
-    <>
-      <textarea ref={textarea} rows={1} cols={80}></textarea>
+    <div className="flex flex-col items-center space-y-6">
+      <textarea className="resize-none" ref={textarea} rows={1} cols={80}></textarea>
       <Keyboard />
-    </>
+    </div>
   );
 }
 

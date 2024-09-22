@@ -1,1 +1,1 @@
-export const useGetAudio = (s: string) => new Audio(`/danish/${s.toLowerCase()}.mp3`);
+export const useGetAudio = (s: string) => new Audio(`/${s.toLowerCase()}.mp3`);

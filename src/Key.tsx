@@ -1,16 +1,15 @@
 import { useState } from "react";
 
-function Key({ audio, children }: { audio: HTMLAudioElement, children: string }) {
+function Key({ audio, value, children }: { audio: HTMLAudioElement, value: string, children: string }) {
   const [active, setActive] = useState(false);
   document.addEventListener("keydown", (event) => {
-    if (event.key === children.toLocaleLowerCase()) {
-      console.log('let us play:', audio, children);
+    if (event.key === value.toLocaleLowerCase()) {
       setActive(true);
       audio.play();
     }
   });
   document.addEventListener("keyup", (event) => {
-    if (event.key === children.toLocaleLowerCase()) {
+    if (event.key === value.toLocaleLowerCase()) {
       setActive(false);
     }
   });
@@ -19,6 +18,8 @@ function Key({ audio, children }: { audio: HTMLAudioElement, children: string })
     className += " ml-3";
   } else if (children === "Z") {
     className += " ml-10";
+  } else if (children === "SPACE") {
+    className += " ml-40 w-64";
   }
 
   return <button className={className}>{children}</button>;

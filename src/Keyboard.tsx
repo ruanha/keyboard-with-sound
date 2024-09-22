@@ -8,7 +8,13 @@ function Keyboard({ keyboard }: { keyboard: ReturnType<typeof useGetKeyboard> })
       {keyboard.layout.map((row, i) => (
         <div key={i} className="flex space-x-2">
           {row.map((key) => (
-            <Key key={key} audio={keyboard.audio[key]}>{key.toUpperCase()}</Key>
+            <Key 
+              key={key.value} 
+              value={key.value}
+              audio={keyboard.audio[key.value]}
+            >
+                {key.representation ? key.representation.toUpperCase() : key.value.toUpperCase()}
+            </Key>
           ))}
         </div>
       ))}

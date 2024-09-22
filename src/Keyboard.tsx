@@ -1,17 +1,16 @@
 import Key from "./Key";
+import { useGetKeyboard } from "./useGetKeyboard";
 
-function Keyboard() {
-  const keyboard = [
-    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Å"],
-    ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Æ", "Ø"],
-    ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "-"],
-  ];
+function Keyboard({ keyboard }: { keyboard: ReturnType<typeof useGetKeyboard> }) {
+
+  console.log(keyboard);
+
   return (
     <div className="flex-col space-y-2">
-      {keyboard.map((row, i) => (
+      {keyboard.layout.map((row, i) => (
         <div key={i} className="flex space-x-2">
           {row.map((key) => (
-            <Key key={key}>{key}</Key>
+            <Key key={key} audio={keyboard.audio[key]}>{key.toUpperCase()}</Key>
           ))}
         </div>
       ))}

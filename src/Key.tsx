@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { useGetAudio } from "./useGetAudio";
 
-function Key({ children }: { children: string }) {
+function Key({ audio, children }: { audio: HTMLAudioElement, children: string }) {
   const [active, setActive] = useState(false);
-  const audio = useGetAudio(children);
   document.addEventListener("keydown", (event) => {
     if (event.key === children.toLocaleLowerCase()) {
-      console.log(children);
+      console.log('let us play:', audio, children);
       setActive(true);
       audio.play();
     }
@@ -22,6 +20,7 @@ function Key({ children }: { children: string }) {
   } else if (children === "Z") {
     className += " ml-10";
   }
+
   return <button className={className}>{children}</button>;
 }
 

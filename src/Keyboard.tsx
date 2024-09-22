@@ -3,8 +3,6 @@ import { useGetKeyboard } from "./useGetKeyboard";
 
 function Keyboard({ keyboard }: { keyboard: ReturnType<typeof useGetKeyboard> }) {
 
-  console.log(keyboard);
-
   return (
     <div className="flex-col space-y-2">
       {keyboard.layout.map((row, i) => (

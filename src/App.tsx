@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="flex flex-col items-center space-y-6">
-      <textarea className="resize-none" ref={textarea} rows={10} cols={80}></textarea>
+      <textarea className="resize-none border-2 rounded border-gray-200 p-2 leading-8 text-xl focus:outline-none focus:border-gray-400" ref={textarea} rows={10} cols={80}></textarea>
       <Keyboard keyboard={keyboard} />
     </div>
   );

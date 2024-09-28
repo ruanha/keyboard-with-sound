@@ -13,7 +13,7 @@ function Key({ audio, value, children }: { audio: HTMLAudioElement, value: strin
       setActive(false);
     }
   });
-  let className = active ? " outline" : "";
+  let className = active ? " shadow-inner" : " shadow";
   if (children === "A") {
     className += " ml-3";
   } else if (children === "Z") {

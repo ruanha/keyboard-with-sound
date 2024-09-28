@@ -13,7 +13,7 @@ function Key({ audio, value, children }: { audio: HTMLAudioElement, value: strin
       setActive(false);
     }
   });
-  let className = active ? "outline" : "";
+  let className = active ? " outline" : "";
   if (children === "A") {
     className += " ml-3";
   } else if (children === "Z") {
@@ -22,7 +22,7 @@ function Key({ audio, value, children }: { audio: HTMLAudioElement, value: strin
     className += " ml-40 w-64";
   }
 
-  return <button className={className}>{children}</button>;
+  return <button className={"rounded-lg py-2.5 px-5 font-medium bg-slate-100" + className}>{children}</button>;
 }
 
 export default Key;

@@ -1,4 +1,3 @@
-import "./App.css";
 import { useRef } from "react";
 import Keyboard from "./Keyboard";
 import { useGetKeyboard } from "./useGetKeyboard";
